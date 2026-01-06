@@ -1,0 +1,114 @@
+# ==========================
+# IDE / Project Files
+# ==========================
+.idea/
+*.iml
+*.ipr
+*.iws
+*.log
+
+# ==========================
+# Gradle / Build
+# ==========================
+/.gradle/
+/build/
+/**/build/
+/**/run/
+/**/out/
+/**/tmp/
+gradle-app.setting
+
+# Gradle wrapper
+!gradlew
+!gradlew.bat
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# ==========================
+# Compiled / packaged files
+# ==========================
+*.class
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Shadow jars (plugin-base)
+**/plugin-base/build/libs/*.jar
+**/plugin-base/build/tmp/shadowJar/
+**/plugin-base/build/tmp/compileJava/
+
+# Shadow jars (api)
+**/api/build/libs/*.jar
+**/api/build/tmp/shadowJar/
+**/api/build/tmp/compileJava/
+
+# Shadow jars (core)
+**/core/build/libs/*.jar
+**/core/build/tmp/shadowJar/
+**/core/build/tmp/compileJava/
+
+# Shadow jars (example-plugin)
+**/example-plugin/build/libs/*.jar
+**/example-plugin/build/tmp/shadowJar/
+**/example-plugin/build/tmp/compileJava/
+
+# ==========================
+# OS / System files
+# ==========================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+$RECYCLE.BIN/
+Desktop.ini
+*.stackdump
+*.lnk
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# ==========================
+# Temporary / backup files
+# ==========================
+*~
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# ==========================
+# Keep all source code for JitPack
+# ==========================
+!/src/
+!/build.gradle
+!/settings.gradle
+!/gradle/

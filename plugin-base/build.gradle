@@ -1,0 +1,89 @@
+plugins {
+  id 'java'
+  id 'maven-publish'
+  id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = "fr.dreamin"
+version = "0.0.1"
+
+java {
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(21))
+  }
+}
+
+dependencies {
+  api project(":core")
+  compileOnly "io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT"
+
+  implementation("cloud.commandframework:cloud-paper:1.8.4")
+  implementation("cloud.commandframework:cloud-annotations:1.8.4")
+
+}
+
+def targetJavaVersion = 21
+
+java {
+  def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+  sourceCompatibility = javaVersion
+  targetCompatibility = javaVersion
+  if (JavaVersion.current() < javaVersion) {
+    toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+  }
+
+  withSourcesJar()
+  withJavadocJar()
+}
+
+tasks {
+  compileJava {
+    options.encoding = "UTF-8"
+    options.release.set(targetJavaVersion)
+  }
+}
+
+
+tasks.withType(Javadoc).configureEach {
+  enabled = false
+}
+
+//tasks {
+//  shadowJar {
+//    archiveFileName.set("DreamAPI.jar")
+//    mergeServiceFiles()
+//    from(sourceSets.main.output)
+//    configurations = [project.configurations.runtimeClasspath]
+//    dependencies {
+//      include(dependency(":api"))
+//      include(dependency(":core"))
+//    }
+//    manifest {
+//      attributes(
+//        "Main-Class": "fr.dreamin.dreamapi.plugin.DreamPlugin"
+//      )
+//    }
+//  }
+//
+//  artifacts {
+//    archives shadowJar
+//  }
+//
+//}
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+
+      groupId = group
+      artifactId = name
+      version = version
+    }
+  }
+}
+
+base {
+  archivesName.set("dreamapi-plugin-base")
+
+}

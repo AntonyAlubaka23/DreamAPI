@@ -1,0 +1,24 @@
+package fr.dreamin.dreamapi.api.gui;
+
+import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
+
+@Getter
+public enum PictureGui {
+
+  DEFAULT("七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七"),
+  GENERIC_54("七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七대"),
+  GENERIC_45("七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七ㇺ"),
+  GENERIC_36("七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七눁"),
+  GENERIC_27("七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七똀"),
+  GENERIC_18("七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七똁"),
+  GENERIC_9("七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七뜀"),
+  MENU("七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七七릐"),;
+
+  private String name;
+
+  PictureGui(final @NotNull String name) {
+    this.name = name;
+  }
+
+}

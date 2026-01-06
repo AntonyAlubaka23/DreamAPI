@@ -1,0 +1,29 @@
+repositories {
+  mavenCentral()
+
+  maven { url 'https://mvn.lumine.io/repository/maven-public/' }
+
+}
+
+def modelEngineVersion = "R4.0.9"
+def cloudCommandFrameworkVersion = "1.8.4"
+def glowingEntitiesVersion = "1.4.9"
+
+dependencies {
+  api project(":api")
+  compileOnly "io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT"
+
+  implementation("cloud.commandframework:cloud-paper:$cloudCommandFrameworkVersion")
+  implementation("cloud.commandframework:cloud-annotations:$cloudCommandFrameworkVersion")
+
+  compileOnly ("com.ticxo.modelengine:ModelEngine:$modelEngineVersion")
+
+  implementation ("fr.skytasul:glowingentities:$glowingEntitiesVersion")
+}
+
+
+
+base {
+  archivesName.set("dreamapi-core")
+}
+
