@@ -22,7 +22,7 @@ public final class ShapelessBuilder {
   private final List<IngredientDefinition> ingredients = new ArrayList<>();
   private ItemStack result;
   private RecipeCondition condition;
-  private RecipeCraftingType recipeCraftingType;
+  private RecipeCraftingType recipeCraftingType = RecipeCraftingType.ALL;
   private List<Component> notPermittedMessage = new ArrayList<>();
 
   private ShapelessBuilder(final @NotNull String key) {

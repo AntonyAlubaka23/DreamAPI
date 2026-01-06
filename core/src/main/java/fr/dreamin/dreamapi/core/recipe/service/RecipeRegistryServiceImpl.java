@@ -10,6 +10,7 @@ import fr.dreamin.dreamapi.core.recipe.event.*;
 import fr.dreamin.dreamapi.api.recipe.storage.RecipeStorageService;
 import fr.dreamin.dreamapi.core.recipe.impl.RecipeRegistryImpl;
 import fr.dreamin.dreamapi.core.item.builder.ItemBuilder;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Keyed;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -165,16 +166,12 @@ public final class RecipeRegistryServiceImpl implements RecipeRegistryService, D
     if (recipe == null) return;
 
     final var craftingType = getCraftingType(event.getView());
-
     if (!recipe.isCraftingTypeAllowed(craftingType)) {
       event.getInventory().setResult(null);
       return;
     }
 
-    final var condition = testCondition(
-      recipe, player, event.getView(), craftingType
-    );
-
+    final var condition = testCondition(recipe, player, event.getView(), craftingType);
     if (!condition.allowed()) {
       var lore = recipe.getResult().lore();
       if (lore == null) lore = new ArrayList<>();
@@ -189,8 +186,7 @@ public final class RecipeRegistryServiceImpl implements RecipeRegistryService, D
       return;
     }
 
-    final var pre = new CustomCraftPreEvent(player, recipe);
-    if (DreamAPI.getAPI().callEvent(pre).isCancelled())
+    if (!new CustomCraftPreEvent(player, recipe).callEvent())
       event.getInventory().setResult(null);
   }
 
@@ -205,22 +201,18 @@ public final class RecipeRegistryServiceImpl implements RecipeRegistryService, D
     if (recipe == null) return;
 
     final var craftingType = getCraftingType(event.getView());
-
     if (!recipe.isCraftingTypeAllowed(craftingType)) {
       event.setCancelled(true);
       return;
     }
 
-    final var condition = testCondition(
-      recipe, player, event.getView(), craftingType
-    );
-
+    final var condition = testCondition(recipe, player, event.getView(), craftingType);
     if (!condition.allowed()) {
       event.setCancelled(true);
       return;
     }
 
-    if (new CustomCraftEvent(player, recipe, recipe.getResult().clone()).callEvent())
+    if (!new CustomCraftEvent(player, recipe, recipe.getResult().clone()).callEvent())
       event.setCancelled(true);
   }
 
@@ -230,7 +222,7 @@ public final class RecipeRegistryServiceImpl implements RecipeRegistryService, D
     final var recipe = this.recipes.get(keyed.getKey().getKey());
     if (recipe == null) return;
 
-    if (new CustomFurnacePreEvent(recipe).callEvent())
+    if (!new CustomFurnacePreEvent(recipe).callEvent())
       event.setTotalCookTime(0);
   }
 
@@ -242,7 +234,7 @@ public final class RecipeRegistryServiceImpl implements RecipeRegistryService, D
     final var recipe = this.recipes.get(keyed.getKey().getKey());
     if (recipe == null) return;
 
-    DreamAPI.getAPI().callEvent(new CustomFurnaceEvent(recipe));
+    new CustomFurnaceEvent(recipe).callEvent();
 
   }
 
@@ -265,7 +257,7 @@ public final class RecipeRegistryServiceImpl implements RecipeRegistryService, D
       return;
     }
 
-    if (new CustomSmithingPreEvent(player, recipe).callEvent())
+    if (!new CustomSmithingPreEvent(player, recipe).callEvent())
       event.setResult(null);
   }
 
@@ -285,7 +277,7 @@ public final class RecipeRegistryServiceImpl implements RecipeRegistryService, D
       return;
     }
 
-    if (new CustomSmithingEvent(player, recipe).callEvent())
+    if (!new CustomSmithingEvent(player, recipe).callEvent())
       event.setResult(Event.Result.DENY);
 
   }

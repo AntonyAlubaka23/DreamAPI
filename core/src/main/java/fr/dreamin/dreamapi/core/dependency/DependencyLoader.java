@@ -22,14 +22,7 @@ public final class DependencyLoader {
     final var loadAfter = dep.loadAfter();
 
     final var installed = Bukkit.getPluginManager().isPluginEnabled(name);
-    if (!installed) {
-      if (hard && strict) {
-        throw new IllegalStateException(
-          String.format("Required plugin '%s' is not installed!", name)
-        );
-      }
-      return false;
-    }
+    if (!installed) return false;
 
     final var type = DependencyReader.getDeclaredType(name);
 

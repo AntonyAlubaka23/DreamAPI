@@ -37,7 +37,9 @@ public final class RecipeCmd {
       .ingredient('B', Material.GOLD_INGOT)
       .result(new ItemStack(Material.EMERALD))
       .condition(condition -> {
-        return RecipeConditionResult.deny();
+        if (condition.craftingType().equals(RecipeCraftingType.PLAYER))
+          return RecipeConditionResult.deny();
+        else return RecipeConditionResult.allow();
       })
       .tag(RecipeTag.SHAPED)
       .build();
