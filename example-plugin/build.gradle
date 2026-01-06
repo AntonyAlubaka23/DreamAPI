@@ -22,6 +22,8 @@ def cloudCommandFrameworkVersion = "1.8.4"
 dependencies {
   compileOnly "io.papermc.paper:paper-api:1.21.10-R0.1-SNAPSHOT"
 
+  implementation project(":api")
+  implementation project(":core")
   implementation project(":plugin-base")
 
   // Cloud CommandFramework
