@@ -167,7 +167,6 @@ public class ItemBuilder {
     return this;
   }
 
-
   public ItemBuilder addItemFlag(final @NotNull ItemFlag... flags) {
     withMeta(meta -> meta.addItemFlags(flags));
     return this;
@@ -207,6 +206,20 @@ public class ItemBuilder {
 
   public ItemBuilder setLegacyLore(final @NotNull String... lines) {
     withMeta(meta -> meta.setLore(Arrays.asList(lines)));
+    return this;
+  }
+
+
+  public ItemBuilder addLore(final @NotNull Component... lines) {
+    return addLore(Arrays.asList(lines));
+  }
+
+  public ItemBuilder addLore(final @NotNull List<Component> lines) {
+    if (this.itemMeta == null || this.itemMeta.lore() == null) return this;
+    final var lore = new ArrayList<>(this.itemMeta.lore());
+
+    lore.addAll(lines);
+    withMeta(meta -> meta.lore(lore));
     return this;
   }
 
