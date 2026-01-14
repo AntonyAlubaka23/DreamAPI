@@ -46,6 +46,7 @@ import net.luckperms.api.LuckPerms;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Event;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -235,6 +236,10 @@ public abstract class DreamPlugin extends JavaPlugin {
     Bukkit.getPluginManager().callEvent(event);
   }
 
+  public static void registerEvent(final @NotNull Listener listener) {
+    Bukkit.getPluginManager().registerEvents(listener, DreamAPI.getAPI().plugin());
+  }
+
   /**
    *
    * @param id
@@ -312,8 +317,6 @@ public abstract class DreamPlugin extends JavaPlugin {
   public void registerCommand(final @NotNull Object commandHandler) {
     this.annotationParser.parse(commandHandler);
   }
-
-
 
   // ###############################################################
   // ----------------------- PRIVATE METHODS -----------------------
