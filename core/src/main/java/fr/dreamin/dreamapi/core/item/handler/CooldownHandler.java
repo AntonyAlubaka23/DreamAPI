@@ -11,18 +11,23 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.UUID;
+import java.util.function.Consumer;
 
 @RequiredArgsConstructor
 public final class CooldownHandler implements ItemHandler {
 
   private final @NotNull Duration cooldown;
   private final HashMap<UUID, Instant> lastUse = new HashMap<>();
+  private @NotNull Consumer<ItemContext> callback = new Consumer<ItemContext>() {
+    @Override public void accept(ItemContext itemContext) {}
+  };
 
   private Component noCooldownMessage;
 
-  public CooldownHandler(final @NotNull Duration cooldown, final @NotNull Component noCooldownMessage) {
+  public CooldownHandler(final @NotNull Duration cooldown, final @NotNull Component noCooldownMessage, Consumer<ItemContext> setCallback) {
     this.cooldown = cooldown;
     this.noCooldownMessage = noCooldownMessage;
+    this.callback = setCallback;
   }
 
   @Override
@@ -38,6 +43,8 @@ public final class CooldownHandler implements ItemHandler {
         player.sendMessage(noCooldownMessage);
       return true;
     }
+
+    this.callback.accept(ctx);
 
     this.lastUse.put(player.getUniqueId(), now);
     player.setCooldown(ctx.item(), (int) cooldown.toMillis() / 50);

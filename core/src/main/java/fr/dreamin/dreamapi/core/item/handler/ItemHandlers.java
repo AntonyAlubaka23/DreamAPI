@@ -22,7 +22,7 @@ public final class ItemHandlers {
   }
 
   public static ItemHandler cooldown(final long seconds, final @NotNull Component noCooldownMessage) {
-    return new CooldownHandler(Duration.ofSeconds(seconds), noCooldownMessage);
+    return new CooldownHandler(Duration.ofSeconds(seconds), noCooldownMessage, ctx -> {});
   }
 
   public static ItemHandler cancel() {
